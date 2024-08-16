@@ -17,6 +17,29 @@ c,d='2',3
 txtt="@"
 print((c+txtt)*3)
 
-#interger division(//) with float and int will give int displayed as float
-#floor gives closest integer,which is lesser than equal to float value, result of (A//B) is same as floor(A/B)
-#remainder(%) is negative when denominator is negative 
+# interger division(//) with float and int will give int displayed as float
+# floor gives closest integer,which is lesser than equal to float value, result of (A//B) is same as floor(A/B)
+# remainder(%) is negative when denominator is negative 
+
+#1.string input
+name=input("Enter your name: ")
+print("Hello",name)
+#2.integer input
+age=int(input("Enter your age: "))
+#3.float input
+price=float(input("Enter the price: "))
+
+#precedence -> not>and>or 
+# inside if for next line 4 spaces is required 
+#clever if / terary operator ---->  <var>=(false_val,true_val)[<condition>]
+#type conversion 
+a=5
+b=3.5
+print(a+b) #automatically get converted to float
+
+#Type CAsting 
+a,b=1,int("2")
+#c=int(b)
+sum=a+c
+print(sum)
+
