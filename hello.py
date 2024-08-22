@@ -125,4 +125,85 @@ def show(n):
     print(n)
     show(n-1)
     print("end")
+
+     #to print sum of n natural number 
+def cal_sum(n):
+    if(n==0):
+      return 0
+    return cal_sum(n-1)+n
+sum=cal_sum(10)
+print(sum)
+
+def print_list(list,idx=0):
+    if(idx==len(list)):
+        return
+    print(list[idx])
+    print_list(list,idx+1)
+fruits=["apple","mango","strawberry","grape"]
+print_list(fruits)
+
+#File I/O
+#ram is voltile memory therefore we store data in files , 
+# 1.text files: .txt,.docx,.log :
+# 2. binary files : .mp4,.mov,.png,.jpeg
+#f=open("file name","mode") read or write by default read 
+f = open("demo.txt") 
+#since the txt file is in same folder so we dont need to give its full path otherwise when it is somehwere else we need to give full path of the file
+data = f.read()# reads entire file
+print(data)
+print(type(data))
+f.close()
+line1 =f.readline() #reads one line at a time 
+line2=f.readline() #7:20:14
+
+# wriring to a file
+f = open("demo.txt","w")
+f.write("this is a newline") #overwritres the entire line 
+
+f=open("demo.text","a")
+f.write("this is newline") #adds to the file
+f=open("demo.txt","r+")#7:28:42
+f=open("demo.txt","w+")#file will open in truncated form all the data will be erased and after that u can rewrite in the file 
+
+#with syntax
+with open("demo.txt","r") as f:
+    data = f.read()
+print(data)
+
+with open("demo.txt","w") as f:
+    f.write("new data")
+#
+ # deleting the file
+ # using the os module: module(like a code library) is a file written by another programmer that generally has a functions we can use.  
+ #os.remove("file_name")
+ #os.rmdir("folder_name") #for deleting empty folder
+ #os.rename("old_name","new_name") #for renaming the file/folder  
+import os
+os.remove("demo.txt")
+
+with open("demo.txt","r") as f:
+    data = f.read()
+new_data = data.replace("java","python")
+print(new_data)    
+
+#######7:46:10
+word = "learning"
+with open("demo.txt","r") as f:
+    data = f.read()
+    if(data.find(word)!=-1):
+        print("found")
+    else:
+        print("not found")   
+
+def check_for_line():
+    word = "learning"
+    data = True
+    line_no = 1  
+    with open("demo.txt","r") as f:
+        while data:
+            data = f.readline()
+            if(word in data):
+                print(line_no) 
+                return 
+            line_no += 1      
     
